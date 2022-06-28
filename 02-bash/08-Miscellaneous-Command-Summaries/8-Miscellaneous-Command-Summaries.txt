@@ -1,0 +1,49 @@
+::Miscellaneous Command Summaries
+---------------------------------
+
+	Here is some helpful information about several commands often used in shell programming.
+
+		echo								--display arguments to standard output
+		
+			\b 								Backspace
+			\c 								Suppress trailing newline
+			\f 								Formfeed
+			\n 								Newline
+			\r 								Carriage return
+			\t 								Tab
+			\\ 								Backslash
+			\0nn 							Character whose ASCII value is octal nn
+											
+		grep								--display lines that contain the given pattern
+		
+			-i 								ignore upper versus lower case
+			-l 								list only filenames that contain a match, not the matching lines
+			-n 								include the file line number with each matching line displayed
+			-v 								reverse the test, which means ignore lines that contain the pattern
+
+		printf								--display formatted text output.
+			
+			for example:					printf "text %[-]m.nx" arguments
+			
+			-								Left justify (optional)
+			m								Minimum field length 
+			n								-Maximum field length for string; number of characters to the right of decimal for
+											floating point.
+			x 								Type of argument
+				s 		string
+				c 		character value
+				d 		decimal integer value
+				x 		hexadecimal value
+				o 		octal value
+				e 		exponential floating point value
+				f 		fixed floating point value
+				g 		general floating point value
+		
+		sort								--display lines in sorted order
+		
+			-b 								ignore leading blanks
+			-d 								ignore leading punctuation
+			-f 								fold upper- and lowercase together
+			-n 								sort leading numbers by magnitude
+			-r 								sort in reverse order
+			+n 								ignore the first n fields when sorting

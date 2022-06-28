@@ -1,0 +1,63 @@
+::I/O
+-----
+
+	::Summary of Standard UNIX I/O 
+	------------------------------
+	
+		Abbreviation					I/O description						File Descriptor
+		
+		STDIN 							Standard input 								0
+		STDOUT 							Standard output 							1
+		STDERR 							Standard error 								2
+		
+	::Commands (here cmd represents an actual command like 'grep')
+	--------------------------------------------------------------
+	
+		cmd > file 						save STDOUT from UNIX command in file
+		cmd 1> file 					same as above
+		cmd >> file 					append STDOUT from UNIX command to file
+		cmd 1>> file 					same as above
+		cmd 2> file 					save STDERR from UNIX command in file
+		cmd 2>> file 					append STDERR from UNIX command in file
+		cmd < file 						provide STDIN to UNIX command from file instead of keyboard
+		cmd 0< file 					same as above
+		
+	::here Document
+	---------------
+	
+		Provides STDIN to UNIX command from lines that follow until delimiter is found at start of line:
+			
+			cmd << delimiter
+			one or more text lines
+			delimiter
+			
+	::Some more Commands
+	--------------------
+	
+		cmd1 | cmd2 						pipe STDOUT of cmd1 as STDIN to cmd2
+		
+		cmd | tee file 						save STDOUT of UNIX command in file but also pass same text
+											as STDOUT
+		
+		exec n> file 						redirect output of file descriptor n to (overwrite) file. This applies to
+											subsequent UNIX commands.
+		
+		exec n>> file 						same as above but append to file instead of overwriting
+		
+		cmd 2>&1 							redirect STDERR from UNIX command to wherever STDOUT is
+											currently going. This is useful when you want to save both output
+											and errors in a file or pipe them together to another command, for
+											example: cmd > file 2>&1 This saves both STDERR and
+											STDOUT in file. 2>&1 must come after > file.
+		
+		cmd >&2 							redirect STDOUT as STDERR. This should be done when echo
+											displays an error message.
+		
+		cmd 1>&2 							same as above
+		
+		cmd n>&m 							redirect file descriptor n to wherever file descriptor m is
+											currently going . This is a generalization of the above
+											examples. Values of n and m above 2 can be used to save an I/O
+											destination and retrieve it later.
+		
+		exec n>&- 							close file descriptor n

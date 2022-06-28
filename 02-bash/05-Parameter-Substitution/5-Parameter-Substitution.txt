@@ -1,0 +1,38 @@
+::Parameter Substitution
+------------------------
+
+	::Parameter Substitution in Bourne/Korn/Bash
+	--------------------------------------------
+	
+		${parameter} 				substitutes the contents of the parameter, which can be a variable name or digit
+									indicating a positional parameter.
+		
+		${parameter:-word} 			substitutes the contents of the parameter but if it is empty or undefined, it
+									substitutes the word, which might contain unquoted spaces.
+		
+		${parameter:=word} 			substitutes the contents of the parameter but if it is empty or undefined, it sets
+									parameter equal to the word and substitutes word.
+		
+		${parameter:?message} 		substitutes the contents of the parameter, but if it is empty or undefined,
+									aborts the script and gives the message as a final error.
+									Message might contain unquoted spaces.
+		
+		${parameter:+word} 			if parameter is not empty, it substitutes the word; otherwise it substitutes nothing.
+		
+	::Parameter Substitution Only in Korn/Bash
+	------------------------------------------
+	
+		${#parameter} 				substitutes the number of characters in the contents of parameter.
+		
+		${#array[*]} 				substitutes the number of elements in array.
+		
+		${parameter#pattern} 		if the regular expression pattern given is found at start of the contents of
+									parameter, it deletes the matching characters and substitutes the remainder.
+									The smallest possible match is deleted.
+		
+		${parameter##pattern} 		same as above but deletes the largest possible match at the start of
+									parameter.
+		
+		${parameter%pattern} 		same as above but deletes the smallest match at the end of parameter.
+		
+		${parameter%%pattern} 		same as above but deletes the largest match at the end of parameter.

@@ -1,0 +1,69 @@
+::Parameters and Variables
+--------------------------
+
+	::User-Defined Variables
+	------------------------
+	
+		USERVAR=value 						sets the contents of USERVAR to value
+		$USERVAR 							substitutes the contents of USERVAR
+		${USERVAR} 							also substitutes the contents of USERVAR. The braces are optional
+											if there is no ambiguity. 
+								
+		User-defined variable names
+			● Must start with letter or _
+			● Can contain only letters, digits, or _
+			● Are often in capital letters to differentiate from UNIX commands
+			
+		::Arrays
+		--------
+		
+			USERVAR[index]=value 			sets a value for array element denoted by index
+			${USERVAR[index]} 				substitutes a value into the command line
+			${USERVAR[*]} 					substitutes all array elements
+			${USERVAR[@]} 					substitutes all array elements as if individually double
+											quoted
+			
+			Note index must be an integer.
+			
+			
+	::Built-in Shell Variables
+	--------------------------
+	
+		$0 									name of the command or script being executed
+		$n 									positional parameters, that is, arguments given on the command line
+											numbered 1 through 9
+		$# 									number of positional parameters given on command line
+		$* 									a list of all the command line arguments
+		$@ 									a list of all command line arguments individually double quoted
+		$? 									The numeric exit status (that is, return code) of last command executed
+		$$ 									PID (process ID) number of current shell
+		$! 									PID (process ID) number of last background command
+		
+	::Built-in Commands that Directly Affect Variables
+	--------------------------------------------------
+
+		getopts, export, read, readonly, unset
+
+	::Two Types of Variables
+	------------------------
+	
+		● Environment variables are passed to any child processes.
+		● Local variables are not passed to any child processes. 
+		
+	::Shell Variables
+	-----------------
+	
+		CDPATH 								contains colon-separated list of directories to facilitate cd command
+		HOME 								Your home directory
+		IFS 								Internal field separator characters
+		OPTARG 								The last cmd line arg processed by getopts (Korn/Bash)
+		OPTIND 								The index of the last cmd line arg processed by getopts (Korn/Bash)
+		PATH 								Contains a colon-separated list of directories to search for commands that are given without any slash
+		PS1 								The primary shell prompt string 
+		PS2 								The secondary shell prompt string for continuation lines
+		PWD 								The current directory
+		RANDOM 								Returns a different random number (from 0 to 32,767) each time it is invoked
+		REPLY 								The last input line from read via select command (Korn/Bash)
+		SECONDS 							The numbers of seconds since shell invocation
+		SHLVL 								The number of shells currently nested
+		UID 								The numeric user ID number

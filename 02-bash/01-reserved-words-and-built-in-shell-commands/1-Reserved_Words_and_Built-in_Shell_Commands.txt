@@ -1,0 +1,147 @@
+::Reserved Words and Built-in Shell Commands
+--------------------------------------------
+
+. 							(period) executes the following command in the current shell instead of as a child process.
+
+: 							(colon) no-op command. Its arguments are processed for variable substitution.
+
+!! (Bash) 					re-executes the previous command.
+
+alias (only Korn/Bash) 		creates a short name for the command.
+
+bg (Korn/Bash) 				starts a suspended job running in background.
+
+break 						exits from current for, while, or until loop.
+
+case 						executes commands given for first pattern that match expr. Patterns can contain filename expansion
+							wildcards.
+							
+		case expr in 
+		 pattern1) commands ;;
+		 pattern2) commands ;;
+		esac
+		
+cd 							changes the directory.
+
+continue 					skips the rest of the commands in a loop and starts the next iteration of a loop.
+
+do 							indicates the start of a block of code, for example, in a for, while, or until loop.
+
+done 						indicates the end of a block of code, for example, in a for, while, or until loop.
+
+echo 						displays its arguments to standard output. Sometimes this is a built-in shell command replacing the
+							external echo command.
+
+esac 						denotes the end of a case statement.
+
+eval 						causes the shell to reinterpret the command that follows.
+
+exec 						executes the following command which replaces the current process instead of running it as a child
+							process.
+
+exit n 						ends the shell script with status code n.
+
+export 						marks the following variables, flagging them to be passed to any child processes and called
+							programs. Korn/Bash enable assignment within the export command:
+
+		export VAR1=value VAR2=value
+
+false (Korn/Bash builtin) 	command that always returns an unsuccessful or logical false result.
+
+fc (Korn/Bash) 				displays or edits a command in history list.
+
+fg (Korn/Bash) 				brings a background or suspended job to the foreground.
+
+fi 							denotes the end of an if statement.
+
+for 						executes a block of code multiple times.
+
+		 for variable [in list]
+		 do
+			commands
+		 done
+
+function (Korn/Bash) 		keyword to define a function enabling local variables.
+
+getopts 					a function called repeatedly in a loop to process the command line arguments. 
+
+history (Korn/Bash) 		shows the most recent commands run by this user.
+
+if 							allows conditional execution.
+
+		if test-command
+		then commands
+		[elif commands]
+		[else commands]
+		fi
+
+integer (Korn/Bash) 		specifies an integer variable.
+
+jobs (Korn/Bash) 			lists the background and suspended jobs.
+
+kill 						sends a signal to a process; often used to terminate a process or to reinitialize a daemon background
+							process.
+
+let (Korn/Bash) 			performs integer arithmetic.
+
+newgrp (Korn) 				changes your primary group, affecting the group of all new files and directories that you
+							create.
+
+print (Korn) 				an alternative to echo.
+
+pwd 						prints the present working or current directory.
+
+r (Korn) 					re-executes the previous command.
+
+read 						waits for one line of standard input and saves each word in the following variables. If there are more
+							words than variables, it saves the remaining words in the last variable.
+
+readonly 					marks the following variables to give error if an attempt to assign a new value is made.
+
+return 						returns from a function.
+
+select (Korn/Bash) 			presents a menu and enables user selection.
+
+set 						displays or changes shell options.
+
+shift 						discards $1 and shifts all the positional parameters up one to take its place.
+
+test (Korn/Bash builtin) 	provides many options to check files, strings, and numeric values. Often denoted
+							by [ (left bracket).
+							
+trap 						designates code to execute if a specific signal is received, such as:
+
+		0 exit from script 
+		1 hangup/disconnect
+		2 intr key pressed (Ctrl-C or DEL)
+		3 quit key pressed
+		15 request to terminate process
+
+type 						displays the pathname of the following command or indicates whether it is built-in or an alias.
+
+typeset (Korn/Bash) 		sets the type of variable and optionally its initial value.
+
+ulimit 						displays or sets the largest file or resource limit.
+
+umask 						displays or sets a mask to affect permissions of any new file or directory you create.
+
+unalias (Korn/Bash) 		removes an alias.
+
+unset 						undefines the variables that follow.
+
+until (Korn/Bash) 			loops until the test command is true (successful).
+
+		until test-command
+		do
+		 commands
+		done
+
+wait 						pauses until all background jobs are complete.
+
+whence (Korn) 				similar to the type command.
+
+while 						loops while a test command is true (successful).
+		while test-command
+		do
+		 commands
+		done

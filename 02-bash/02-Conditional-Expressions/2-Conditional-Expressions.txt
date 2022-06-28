@@ -1,0 +1,59 @@
+::Conditional Expressions
+-------------------------
+
+	These can be used with:
+
+		if [ test-expression ]
+		while [ test-expression ]
+		until [ test-expression ] 
+		
+	::File Tests
+	------------
+	
+		-a file 				true if the file exists (Korn/Bash)
+		-b file 				true if the file is a block special device
+		-c file 				true if the file is a character special device
+		-d file 				true if the file is a directory
+		-f file 				true if the file is a regular file
+		-g file 				true if the file has the SGID permission bit set
+		-G file 				true if the file's group matches the user's group
+		-k file 				true if the file has the sticky bit set
+		-L file 				true if the file is a symbolic link
+		-O file 				true if the user running this command owns this file (Korn/Bash)
+		-p file 				true if the file is a named pipe or fifo
+		-r file 				true if the file is readable
+		-s file 				true if the file has a size greater than zero
+		-S file 				true if the file is a socket
+		-t filedes 				true if file descriptor is associated with a terminal device 
+		-u file 				true if the file has its SUID permission bit set
+		-w file 				true if the file is writable
+		-x file 				true if the file is executable
+
+	::String Tests
+	--------------
+
+		-z string 				true if the string is empty
+		-n string 				true if the string has nonzero size
+		s1 = s2 				true if string s1 equals s2
+		s1 != s2 				true if the strings are not equal
+		s1 						true if string s1 is not empty
+		s1 < s2 				true if s1 comes before s2 in ASCII order (Korn [[ ]])
+		s1 > s2 				true if s1 comes after s2 in ASCII order (Korn [[ ]])
+
+
+	::Integer Comparisons
+	---------------------
+
+		Comparisons stop on first non-digit.
+
+		n1 -eq n2 				true if n1 is equal in value to n2.
+		n1 -ne n2 				true if n1 is not equal to n2
+		n1 -gt n2 				true if n1 is greater than n2
+		n1 -ge n2 				true if n1 is greater than or equal to n2
+		n1 -lt n2 				true if n1 is less than n2
+		n1 -le n2 				true if n1 is less than or equal to n2
+		! expr 					true if expr is false (logical NOT)
+		-a 						logical AND (Bourne)
+		&& 						logical AND (Bash/Korn [[ ]])
+		-o 						logical OR (Bourne)
+		|| 						logical OR (Bash/Korn [[ ]])
